@@ -5,7 +5,7 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace Application\Controller;
+namespace Started\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
@@ -19,6 +19,31 @@ class IndexController extends AbstractActionController
 
     public function editAction()
     {
-        return new ViewModel();
+      $checkMethod = $this->getRequest();
+      if ($checkMethod->isGet()) {
+        echo 'func is Get == ';
+      }
+
+      echo 'started edit view';
+      return false;
     }
+
+    public function deleteAction()
+    {
+        echo 'started delete view';
+        return false;
+    }
+
+    public function delete02Action()
+    {
+        echo 'started delete02 view';
+        return false;
+    }
+
+    // public function loginAction()
+    // {
+    //     echo 'started index-login view';
+    //     return false;
+    // }
+
 }

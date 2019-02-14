@@ -14,9 +14,22 @@ class UserController extends AbstractActionController
 {
     public function indexAction()
     {
-
-      echo 'user index action';
-      return false;
+      $checkMethod = $this->getRequest();
+      if ($checkMethod->isGet()) {
+        $action = $this->params()->fromRoute('action', 'default action');
+        $id = $this->params()->fromRoute('id', -1);
+      } else {
+        $action = 'index';
+        $id = -1;
+      }
+      if ($id < 0) {
+        // $this->getResponse()->setStatusCode(500);
+        throw new \Exception('id < 0, cant find');
+      }
+      return new ViewModel([
+        'id' => $id,
+        'action' => $action
+      ]);
     }
 
     public function loginAction()

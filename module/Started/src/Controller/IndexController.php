@@ -40,10 +40,4 @@ class IndexController extends AbstractActionController
         return false;
     }
 
-    // public function loginAction()
-    // {
-    //     echo 'started index-login view';
-    //     return false;
-    // }
-
 }

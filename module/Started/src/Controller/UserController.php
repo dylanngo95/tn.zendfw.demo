@@ -14,6 +14,7 @@ class UserController extends AbstractActionController
 {
     public function indexAction()
     {
+
       echo 'user index action';
       return false;
     }
@@ -21,19 +22,27 @@ class UserController extends AbstractActionController
     public function loginAction()
     {
       $getMethod = $this->getRequest();
-      if ($getMethod -> isGet()) {
-        echo 'action is GET ==> ';
+      if ($getMethod -> isGet()){
+        echo 'action is GET ==> </br>';
+        $action = $this->params()->fromRoute('action', 'default vaule');
+        $id = $this->params()->fromRoute('id', 0);
+        echo $action;
+        echo $id;
+        echo '<br>';
       } else {
-        echo 'action is not GET ==> ';
+        $var = $this->params()->fromPost('name', 'name test');
+        echo $var;
+        echo '</br>action is not GET ==> ';
       }
       
-      if ($getMethod -> isPost()) {
-        echo 'action is POST ==> ';
-      } else {
-        echo 'action is not POST ==> ';
-      }
+      
+      // if ($getMethod -> isPost()) {
+      //   echo 'action is POST ==> ';
+      // } else {
+      //   echo 'action is not POST ==> ';
+      // }
 
-      echo 'user user-login action';
+      // echo 'user user-login action';
       return false;
     }
 

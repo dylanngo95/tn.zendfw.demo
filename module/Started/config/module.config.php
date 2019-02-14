@@ -28,7 +28,7 @@ return [
                     //   'id' => '[0-9]*',
                     // ],
                 ],
-                'may_terminate' => false,
+                'may_terminate' => true,
                 'child_routes' => [
                   'sub_route' => [
                     'type' => Segment::class,
